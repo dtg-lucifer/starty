@@ -15,17 +15,23 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
+    "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^3.87.1",
     "@tailwindcss/typography": "^0.5.16",
+    "@types/uuid": "^10.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.507.0",
     "next": "15.3.1",
     "next-auth": "5.0.0-beta.27",
+    "next-sanity": "^9.10.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "styled-components": "^6.1.17",
+    "sanity": "^3.87.1",
+    "styled-components": "6",
     "tailwind-merge": "^3.2.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
