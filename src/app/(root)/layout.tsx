@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, Fira_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+import Navbar from "~/components/navbar";
+import Footer from "~/components/footer";
 
 const poppins = Poppins({
   display: "fallback",
@@ -38,7 +40,9 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${firaMono.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
