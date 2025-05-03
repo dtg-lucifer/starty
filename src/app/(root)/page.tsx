@@ -1,8 +1,18 @@
-export default function Home() {
-  return (
-    <div>
+import { Suspense } from "react";
+import HeroSection from "~/components/hero-section/hero";
+import { StartupSection } from "~/components/startup-section/startup-section";
+import Loading from "./loading";
 
-      <h1>Welcome to the Home Page</h1>
-    </div>
+export default async function Home(
+  { searchParams }: { searchParams: Promise<{ query?: string }> },
+) {
+  const query = (await searchParams).query;
+  return (
+    <main>
+      <HeroSection query={query} />
+      <Suspense fallback={<Loading />}>
+        <StartupSection query={query} />
+      </Suspense>
+    </main>
   );
 }
