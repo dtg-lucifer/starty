@@ -1,19 +1,9 @@
 import { defineField, defineType } from "sanity";
-import { v4 as uuid } from "uuid";
-
 export const startup = defineType({
   name: "startup",
   title: "Startup",
   type: "document",
   fields: [
-    defineField({
-      name: "id",
-      type: "string",
-      title: "ID",
-      validation: (Rule) => Rule.required(),
-      initialValue: () => uuid(),
-      readOnly: true,
-    }),
     defineField({
       name: "title",
       type: "string",

@@ -4,9 +4,11 @@ import {
   useData,
 } from "~/data/mock-startup-data";
 import { StartupCard } from "./startup-card";
+import { client } from "~/sanity/lib/client";
+import { STARTUP_QUERY } from "~/sanity/lib/query";
 
 export const StartupSection = async ({ query }: { query?: string }) => {
-  const posts = await useData();
+  const posts = await client.fetch<Array<StartupData>>(STARTUP_QUERY);
   return (
     <section className="inner-wrapper">
       {query

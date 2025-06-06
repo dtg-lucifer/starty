@@ -2,22 +2,18 @@ import { Eye } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { StartupData } from "~/data/mock-startup-data";
-import { formatDate } from "~/utils/format-date";
 
 export const StartupCard = ({ post }: { post: StartupData }) => {
   return (
     <Link href={`/startup/${post._id}`} className="startup-card_link">
       <div className="group">
         <div className="startup-card">
-          {/* Date display */}
-          <p className="startup-card_date">
-            {formatDate(post._createdAt)}
-          </p>
+          {/* Date display has been removed since _createdAt is no longer in the type */}
 
           {/* Author info */}
           <div className="flex items-center gap-2 mt-4">
             <Image
-              src={post.author.avatar}
+              src={post.author.image}
               alt={post.author.name}
               width={40}
               height={40}
@@ -30,7 +26,7 @@ export const StartupCard = ({ post }: { post: StartupData }) => {
           <h2 className="mt-3 font-bold text-xl">{post.title}</h2>
 
           {/* Description */}
-          <p className="startup-card_desc">{post.desctiption}</p>
+          <p className="startup-card_desc">{post.description}</p>
 
           {/* Image */}
           <Image
@@ -41,12 +37,12 @@ export const StartupCard = ({ post }: { post: StartupData }) => {
             className="startup-card_img"
           />
 
-          {/* Footer with category, view count and button */}
+          {/* Footer with slug and view count */}
           <div className="flex justify-between items-center mt-4">
-            <p className="category-tag">{post.category}</p>
+            <p className="category-tag">{post.slug.current}</p>
             <div className="flex items-center gap-2">
               <Eye />
-              <span>{post.views}</span>
+              <span>{post.view || 0}</span>
             </div>
           </div>
         </div>

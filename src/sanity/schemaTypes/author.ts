@@ -1,6 +1,5 @@
 import { UserIcon } from "lucide-react";
 import { defineField, defineType } from "sanity";
-import { v4 as uuid } from "uuid";
 
 export const author = defineType({
   name: "author",
@@ -8,14 +7,6 @@ export const author = defineType({
   type: "document",
   icon: UserIcon,
   fields: [
-    defineField({
-      name: "id",
-      type: "string",
-      title: "ID",
-      validation: (Rule) => Rule.required(),
-      initialValue: () => uuid(),
-      readOnly: true,
-    }),
     defineField({
       name: "name",
       type: "string",

@@ -1,148 +1,214 @@
 export type StartupAuthor = {
   _id: string;
   name: string;
-  avatar: string;
+  image: string;
+  bio: string;
+  email: string;
+  username: string;
 };
 
 export type StartupData = {
-  _createdAt: string;
   _id: string;
-  views: number;
   image: string;
   author: StartupAuthor;
-  category: string;
   title: string;
-  desctiption: string;
+  description: string;
+  slug: {
+    _type: string;
+    current: string;
+  };
+  pitch: string;
+  view: number | null;
 };
 
 export const mockStartupData: StartupData[] = [
   {
-    _createdAt: "2023-10-01T12:00:00Z",
     _id: "1",
-    views: 11,
     image:
       "https://placehold.jp/30/dd6699/ffffff/300x150.png?text=placeholder+image",
     author: {
       _id: "kqdhjasf-adsafhasbfajfha-assda34223h",
       name: "John Doe",
-      avatar: "https://avatar.iran.liara.run/public",
+      image: "https://avatar.iran.liara.run/public",
+      bio: "Software developer with passion for startups",
+      email: "john.doe@example.com",
+      username: "johndoe",
     },
-    category: "Robotics",
     title: "My First Startup",
-    desctiption:
+    description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    slug: {
+      _type: "slug",
+      current: "my-first-startup",
+    },
+    pitch:
+      "# My First Startup\nThis is an innovative solution for modern problems",
+    view: 11,
   },
   {
-    _createdAt: "2023-10-15T09:30:00Z",
     _id: "2",
-    views: 243,
     image:
       "https://placehold.jp/30/3366cc/ffffff/300x150.png?text=placeholder+image",
     author: {
       _id: "grt43hj5-kl56jh3b2n-98gbh4",
       name: "Sarah Johnson",
-      avatar: "https://avatar.iran.liara.run/public/42",
+      image: "https://avatar.iran.liara.run/public/42",
+      bio:
+        "Full-stack developer passionate about creating elegant solutions to complex problems.",
+      email: "sarah.johnson@example.com",
+      username: "sarahj",
     },
-    category: "Fintech",
     title: "BlockPay - Blockchain Payment Solutions",
-    desctiption:
+    description:
       "Full-stack developer passionate about creating elegant solutions to complex problems.",
+    slug: {
+      _type: "slug",
+      current: "blockpay-blockchain-payment-solutions",
+    },
+    pitch:
+      "# BlockPay\nRevolutionizing the payment industry with blockchain technology",
+    view: 243,
   },
   {
-    _createdAt: "2023-11-03T14:45:00Z",
     _id: "3",
-    views: 89,
     image:
       "https://placehold.jp/30/66cc33/ffffff/300x150.png?text=placeholder+image",
     author: {
       _id: "plm765-jhg654frt-9876df",
       name: "Michael Chen",
-      avatar: "https://avatar.iran.liara.run/public/15",
+      image: "https://avatar.iran.liara.run/public/15",
+      bio:
+        "Serial entrepreneur with experience in AI and machine learning applications.",
+      email: "michael.chen@example.com",
+      username: "mchen",
     },
-    category: "AI",
     title: "NeuralMind - AI-powered Decision Making",
-    desctiption:
+    description:
       "Serial entrepreneur with experience in AI and machine learning applications.",
+    slug: {
+      _type: "slug",
+      current: "neuralmind-ai-powered-decision-making",
+    },
+    pitch:
+      "# NeuralMind\nHarnessing the power of AI for smarter decision making",
+    view: 89,
   },
   {
-    _createdAt: "2023-09-22T11:15:00Z",
     _id: "4",
-    views: 156,
     image:
       "https://placehold.jp/30/ff9900/ffffff/300x150.png?text=placeholder+image",
     author: {
       _id: "vbn432-poi876tyu-kjh654",
       name: "Emma Rodriguez",
-      avatar: "https://avatar.iran.liara.run/public/28",
+      image: "https://avatar.iran.liara.run/public/28",
+      bio:
+        "Environmental engineer focused on sustainable technology solutions.",
+      email: "emma.rodriguez@example.com",
+      username: "emmar",
     },
-    category: "CleanTech",
     title: "EcoSolutions - Renewable Energy for Everyone",
-    desctiption:
+    description:
       "Environmental engineer focused on sustainable technology solutions.",
+    slug: {
+      _type: "slug",
+      current: "ecosolutions-renewable-energy-for-everyone",
+    },
+    pitch: "# EcoSolutions\nMaking renewable energy accessible to all",
+    view: 156,
   },
   {
-    _createdAt: "2023-12-05T16:20:00Z",
     _id: "5",
-    views: 412,
     image:
       "https://placehold.jp/30/cc3366/ffffff/300x150.png?text=placeholder+image",
     author: {
       _id: "mnb987-qaz321-yhn765",
       name: "David Kim",
-      avatar: "https://avatar.iran.liara.run/public/33",
+      image: "https://avatar.iran.liara.run/public/33",
+      bio:
+        "Experienced healthcare professional with a passion for medical technology.",
+      email: "david.kim@example.com",
+      username: "davidk",
     },
-    category: "HealthTech",
     title: "MediConnect - Digital Health Platform",
-    desctiption:
+    description:
       "Experienced healthcare professional with a passion for medical technology.",
+    slug: {
+      _type: "slug",
+      current: "mediconnect-digital-health-platform",
+    },
+    pitch:
+      "# MediConnect\nConnecting patients with healthcare providers seamlessly",
+    view: 412,
   },
   {
-    _createdAt: "2023-08-17T10:40:00Z",
     _id: "6",
-    views: 78,
     image:
       "https://placehold.jp/30/339999/ffffff/300x150.png?text=placeholder+image",
     author: {
       _id: "jkl098-fgh765-tyu432",
       name: "Priya Patel",
-      avatar: "https://avatar.iran.liara.run/public/19",
+      image: "https://avatar.iran.liara.run/public/19",
+      bio:
+        "IoT specialist with background in embedded systems and network security.",
+      email: "priya.patel@example.com",
+      username: "priyap",
     },
-    category: "IoT",
     title: "SmartHome Hub - Connect Your Life",
-    desctiption:
+    description:
       "IoT specialist with background in embedded systems and network security.",
+    slug: {
+      _type: "slug",
+      current: "smarthome-hub-connect-your-life",
+    },
+    pitch: "# SmartHome Hub\nThe central hub for all your smart devices",
+    view: 78,
   },
   {
-    _createdAt: "2023-11-28T13:55:00Z",
     _id: "7",
-    views: 203,
     image:
       "https://placehold.jp/30/9933cc/ffffff/300x150.png?text=placeholder+image",
     author: {
       _id: "uio765-qwe321-rty987",
       name: "Alex Thompson",
-      avatar: "https://avatar.iran.liara.run/public/51",
+      image: "https://avatar.iran.liara.run/public/51",
+      bio:
+        "Former Google engineer with focus on augmented reality applications.",
+      email: "alex.thompson@example.com",
+      username: "alext",
     },
-    category: "AR/VR",
     title: "RealityShift - AR Workspace Solutions",
-    desctiption:
+    description:
       "Former Google engineer with focus on augmented reality applications.",
+    slug: {
+      _type: "slug",
+      current: "realityshift-ar-workspace-solutions",
+    },
+    pitch: "# RealityShift\nTransforming workspaces with augmented reality",
+    view: 203,
   },
   {
-    _createdAt: "2023-10-09T08:25:00Z",
     _id: "8",
-    views: 167,
     image:
       "https://placehold.jp/30/cc6633/ffffff/300x150.png?text=placeholder+image",
     author: {
       _id: "bnm456-vfr678-plm234",
       name: "Olivia Wilson",
-      avatar: "https://avatar.iran.liara.run/public/38",
+      image: "https://avatar.iran.liara.run/public/38",
+      bio:
+        "Food scientist and entrepreneur exploring sustainable food technology.",
+      email: "olivia.wilson@example.com",
+      username: "oliviaw",
     },
-    category: "FoodTech",
     title: "NutriGrow - Vertical Farming Systems",
-    desctiption:
+    description:
       "Food scientist and entrepreneur exploring sustainable food technology.",
+    slug: {
+      _type: "slug",
+      current: "nutrigrow-vertical-farming-systems",
+    },
+    pitch:
+      "# NutriGrow\nInnovating agriculture with vertical farming solutions",
+    view: 167,
   },
 ];
 
