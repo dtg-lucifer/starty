@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "4108b549-82cd-4e1d-b0cc-03be121fd937",
+    "author": {
+      "_id": "f6f91b11-507c-4661-96d0-267f0c35c6d2",
+      "bio": "Hey hello how are you",
+      "email": "dev.bosepiush@gmail.com",
+      "id": "82c788c2-869f-4045-a2c1-c6a6607cd428",
+      "image": "https://placehold.jp/3d4070/ffffff/150x150.png",
+      "name": "Piush Bose",
+      "username": "devpiush"
+    },
+    "description": "This is a brand new startup made by Piush Bose",
+    "id": "93b1cbdd-a74a-4586-87b9-034c1f100517",
+    "image": "https://placehold.jp/30/dd6699/ffffff/300x150.png?text=placeholder+image",
+    "pitch": "# This is Great\nThis is the best startup ever\n\n---\n\n```bash\ntest\n```",
+    "slug": {
+      "_type": "slug",
+      "current": "my-first-startup"
+    },
+    "title": "My First Startup",
+    "view": null
+  }
+]

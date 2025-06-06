@@ -25,7 +25,7 @@ export const startup = defineType({
       type: "slug",
       title: "Slug",
       options: {
-        source: "name",
+        source: "title",
         maxLength: 96,
         slugify: (input) =>
           input
@@ -63,10 +63,20 @@ export const startup = defineType({
         ),
     }),
     defineField({
+      name: "pitch",
+      type: "markdown",
+    }),
+    defineField({
       name: "image",
       type: "url",
       title: "Image",
       validation: (Rule) => Rule.uri({ scheme: ["http", "https"] }).required(),
     }),
   ],
+  preview: {
+    select: {
+      title: "title",
+      subtitle: "category",
+    },
+  },
 });

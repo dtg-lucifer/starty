@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Fira_Mono, Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "~/components/navbar";
-import Footer from "~/components/footer";
+import "easymde/dist/easymde.min.css";
 
 const poppins = Poppins({
   display: "fallback",

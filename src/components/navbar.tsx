@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from "react";
 import { auth, signIn, signOut } from "~/auth";
 
+// @TODO add lazy loading for the component while the session is being fetched
+
 const Navbar = async () => {
   const session = await auth();
 
