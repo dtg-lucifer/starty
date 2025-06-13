@@ -14,6 +14,15 @@ export const author = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "id",
+      type: "string",
+      title: "Auth ID",
+      validation: (Rule) =>
+        Rule.info(
+          "This id refers to the OAuth2 client id, with which the author logged in",
+        ),
+    }),
+    defineField({
       name: "email",
       type: "string",
       title: "Email",

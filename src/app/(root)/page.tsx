@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import HeroSection from "~/components/hero-section/hero";
 import Loading from "./loading";
+import { auth } from "~/auth";
 
 const StartupSection = lazy(async () => {
   const { StartupSection } = await import(
@@ -13,6 +14,10 @@ export default async function Home(
   { searchParams }: { searchParams: Promise<{ query?: string }> },
 ) {
   const query = (await searchParams).query;
+
+  const session = await auth();
+  console.log(session?.id);
+
   return (
     <main>
       <HeroSection query={query} />

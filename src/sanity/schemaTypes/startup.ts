@@ -45,8 +45,9 @@ export const startup = defineType({
         Rule.max(200).warning("Shorter descriptions are better!"),
     }),
     defineField({
-      name: "catergory",
+      name: "category",
       type: "string",
+      title: "Category",
       validation: (Rule) =>
         Rule.required().min(3).max(20).error(
           "Must be between 3 and 20 characters",

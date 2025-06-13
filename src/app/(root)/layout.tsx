@@ -44,7 +44,7 @@ export default function RootLayout({
         {/* @TODO: add suspense for loading the navbar lazily */}
         <Navbar />
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

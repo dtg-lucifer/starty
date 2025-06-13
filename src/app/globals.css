@@ -118,6 +118,124 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* General typography styles for all rendered HTML */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.25;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-size: 2.25rem; /* text-4xl */
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.3rem;
+  }
+
+  h2 {
+    font-size: 1.875rem; /* text-3xl */
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.25rem;
+  }
+
+  h3 {
+    font-size: 1.5rem; /* text-2xl */
+  }
+
+  h4 {
+    font-size: 1.25rem; /* text-xl */
+  }
+
+  h5 {
+    font-size: 1.125rem; /* text-lg */
+  }
+
+  h6 {
+    font-size: 1rem; /* text-base */
+    font-style: italic;
+  }
+
+  p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.75;
+  }
+
+  /* a {
+    color: #3b82f6;
+    text-decoration: underline;
+  } */
+
+  strong {
+    font-weight: 700;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  blockquote {
+    padding-left: 1rem;
+    border-left: 4px solid #e5e7eb;
+    color: #6b7280; /* gray-500 */
+    font-style: italic;
+    margin: 1.5rem 0;
+  }
+
+  ul, ol {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  ul li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+  }
+
+  ol li {
+    list-style-type: decimal;
+    margin-bottom: 0.5rem;
+  }
+
+  code {
+    background-color: #f3f4f6; /* gray-100 */
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-family: Menlo, monospace;
+    font-size: 0.875rem;
+  }
+
+  pre {
+    background-color: #1f2937; /* gray-800 */
+    color: #f9fafb; /* gray-50 */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+    font-family: Menlo, monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  th, td {
+    border: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f3f4f6;
+    font-weight: 600;
+  }
 }
 
 body {
