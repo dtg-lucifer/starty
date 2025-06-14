@@ -3,6 +3,7 @@ import { Fira_Mono, Poppins } from "next/font/google";
 import "../globals.css";
 import Navbar from "~/components/navbar";
 import Footer from "~/components/footer";
+import { Toaster } from "~/components/ui/sonner";
 
 const poppins = Poppins({
   display: "fallback",
@@ -45,6 +46,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         {/* <Footer /> */}
+        <Toaster />
       </body>
     </html>
   );

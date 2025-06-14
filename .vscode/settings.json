@@ -4,7 +4,7 @@
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": false,
     "markdown": true,
     "scminput": false,

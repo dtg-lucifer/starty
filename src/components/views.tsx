@@ -19,7 +19,7 @@ const View = async ({ id }: { id: string }) => {
 
   return (
     <div className="view-container">
-      <div className="-top-2 -right-2 absolute">
+      <div className="top-2 -right-2 absolute">
         <Ping />
       </div>
 

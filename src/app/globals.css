@@ -488,7 +488,7 @@ input[type="reset"]:not(:disabled),
 
   /* view */
   .view-container {
-    @apply right-3 bottom-3 fixed flex justify-end items-center mt-5;
+    @apply bottom-3 left-3 fixed flex justify-end items-center mt-5;
   }
 
   .view-text {

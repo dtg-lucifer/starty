@@ -1,14 +1,21 @@
 import React, { Suspense } from "react";
 import { sanityFetch, SanityLive } from "~/sanity/lib/live";
-import { SINGLE_STARTUP_QUERY } from "~/sanity/lib/query";
+import {
+  PLAYLIST_BY_SLUG_QUERY,
+  SINGLE_STARTUP_QUERY,
+} from "~/sanity/lib/query";
 import markdownit from "markdown-it";
 import { notFound } from "next/navigation";
-import { StartupCard } from "~/components/startup-section/startup-card";
+import {
+  IStartupCard,
+  StartupCard,
+} from "~/components/startup-section/startup-card";
 import Image from "next/image";
 import Link from "next/link";
 import { formatDate } from "~/utils/format-date";
 import View from "~/components/views";
 import { Skeleton } from "~/components/ui/skeleton";
+import { client } from "~/sanity/lib/client";
 
 export const experimental_ppr = true;
 
@@ -16,10 +23,16 @@ const md = markdownit();
 
 const StartupPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
-  const { data: post } = await sanityFetch({
-    query: SINGLE_STARTUP_QUERY,
-    params: { id },
-  });
+
+  // Parallel fetching of post and editor's picks
+  const [post, { select: editorPosts }] = await Promise.all([
+    await client.fetch(SINGLE_STARTUP_QUERY, {
+      id,
+    }),
+    await client.fetch(PLAYLIST_BY_SLUG_QUERY, {
+      slug: "editor-s-pick",
+    }),
+  ]);
 
   if (!post) return notFound();
 
@@ -88,19 +101,17 @@ const StartupPage = async ({ params }: { params: Promise<{ id: string }> }) => {
 
         <hr className="divider" />
 
-        {
-          /* {editorPosts?.length > 0 && (
+        {editorPosts?.length > 0 && (
           <div className="mx-auto max-w-4xl">
             <p className="text-30-semibold">Editor Picks</p>
 
             <ul className="mt-7 card_grid-sm">
-              {editorPosts.map((post: StartupTypeCard, i: number) => (
+              {editorPosts.map((post: IStartupCard, i: number) => (
                 <StartupCard key={i} post={post} />
               ))}
             </ul>
           </div>
-        )} */
-        }
+        )}
 
         <Suspense fallback={<Skeleton className="view_skeleton" />}>
           <View id={id} />
